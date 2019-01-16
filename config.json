@@ -1,0 +1,13 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql+pymysql://root:@localhost/ThunderCode",
+    "prod_uri": "mysql+pymysql://root:@localhost/ThunderCode",
+    "fb_url": "https://facebook.com/shubhank.khare.3",
+    "tw_url": "https://twitter.com",
+    "git_url": "https://github.com/shubhank7673",
+    "is_logged_in": "no",
+    "upload_location": "/tmp/static/uploads"
+  }
+}
