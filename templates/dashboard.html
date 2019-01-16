@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{url_for('static',filename='img/dashboard-bg1.jpg')}}">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Admin Dashboard</h1>
+              <span class="subheading"></span>
+              <pre>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1>upload a file</h1>
+          <br>
+         <form action="/uploader" method="post" enctype="multipart/form-data">
+         <input type="file" name="file1"> 
+         <p><button type="submit" class="btn btn-primary" id="sendMessageButton">upload</button></p>
+       </form>
+       <br>
+    <thead>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th colspan="3" style="font-size: 40px;">Posts</th>
+        <td colspan="2"><a href="/edit/0"><button class="btn btn-lg btn-primary btn-block" style="padding: 10px;padding-top:15px;padding-bottom:15px;">Add a post</button></td>
+    </thead>
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+      <tr>
+        <td>{{post[0]}}</td>
+        <td>{{post[1]}}</td>
+        <td>{{post[3]}}</td>
+        <td><a href="/edit/{{post[0]}}"><button class="btn btn-lg btn-primary btn-block" style="padding: 10px;padding-top:15px;padding-bottom:15px;">Edit</button></a></td>
+        <td><a href="/delete/{{post[0]}}"><button  class="btn btn-lg btn-primary btn-block" style="padding: 10px;padding-top:15px;padding-bottom:15px;">Delete</button></a></td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{url_for('static',filename='img/home.jpg')}}">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>ThunderCode</h1>
+              <span class="subheading">Made with love for programmers</span>
+              <pre>
+                
+                
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+        {% for post in posts %}
+          <div class="post-preview" id="posts">
+            <a href="/post/{{ post[4] }}">
+              <h2 class="post-title">
+              	{{ post[1] }}
+              </h2>
+              <h3 class="post-subtitle">
+              	{{ post[6] }}
+              </h3>
+            </a>
+            <p class="post-meta">Last update by
+              <a href="https://facebook.com/shubhank.khare.3">Admin</a>
+              on {{ post[3] }}</p>
+              {{ post[2][0:120] }} . . . .
+          </div>
+           <hr>
+          {% endfor %}
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-left" href="{{prev}}"> &larr; Previous Post</a>
+            <a class="btn btn-primary float-right" href="{{next}}">Next Post &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

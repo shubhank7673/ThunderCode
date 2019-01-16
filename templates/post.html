@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    {% set image = 'img/posts/' + post[5] %}
+    <header class="masthead" style="background-image: url('{{url_for('static',filename=image)}}")>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>{{post[1]}}</h1>
+              <h2 class="subheading">{{post[6]}}</h2>
+              <span class="meta">Last update by
+                <a href="https://facebook.com/shubhank.khare.3">Admin</a>
+                on {{post[3]}}<br>Scroll down to see post</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            {% if params['is_logged_in']  == 'yes' %}
+            <a href="/edit/{{post[0]}}"><button type="submit" class="btn btn-primary" id="sendMessageButton">Edit Post</button></a>
+            {% endif %}
+            <p>{{post[2]}}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+{% endblock %}
