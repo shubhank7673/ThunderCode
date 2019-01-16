@@ -76,10 +76,10 @@ def totalposts():
     conn = Connection('database.db')
     cur = conn.cursor()
     cur.execute("SELECT * FROM posts order by date desc;")
-    #LIMIT 5
+    #LIMIT 2
     posts = cur.fetchall()
     conn.close()
-    # 5 in the number of posts per page it can be changed accordingly
+    # 2 in the number of posts per page it can be changed accordingly
     last = math.ceil(len(posts)/2)
     page = request.args.get('page')
     if(not str(page).isnumeric()):
