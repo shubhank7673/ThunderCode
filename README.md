@@ -3,4 +3,4 @@ A website for the blogs related to programming stuff made using flask for backen
 
 default username and password is:
                                    
-                          USERNAME: DummyUser , PASSWORD: DummyPassword
+                                USERNAME: DummyUser , PASSWORD: DummyPassword
