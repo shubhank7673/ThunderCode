@@ -11,8 +11,7 @@ import math
 with open('config.json','r') as c:
     params = json.load(c)["params"]
 
-# method to host using the local server or production server and xampp with sqlalchemy,mysql,apacheserver
-# but we will go with sqlite database hence this section is commented
+#just ignore the commented part
 '''if(local_server):
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri'] #for local server
 else:
