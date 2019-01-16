@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,session,redirect
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from flask_mail import Mail,Message
+#from flask_mail import Mail,Message
 import os
 import json
 from sqlite3 import *
